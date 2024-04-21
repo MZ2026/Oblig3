@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Oblig3</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="endre.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Bestilling av kinobiletter</h1>
+    <form class="form">
+        <input type="hidden" id="id">
+
+        <div class="form-group" >
+            <label for="film">Velg film</label>
+            <select id="film">
+                <option value="" disabled selected>Velg film her</option>
+                <option>The Beekeeper</option>
+                <option>Killers of the Flower Moon</option>
+                <option>Sound of Freedom</option>
+                <option>Radical</option>
+            </select>
+            <span id="feilFilm"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="antall">Antall</label>
+            <input type="number" id="antall"  min="1" max="99">
+            <span id="feilAntall"></span>
+        </div>
+
+        <table>
+            <tr>
+                <div class="form-group">
+                    <td><label for="fornavn">Fornavn</label></td>
+                    <td><input type="text" id="fornavn" >
+                        <span id="feilFornavn"></span></td>
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group">
+                    <td> <label for="etternavn">Etternavn</label></td>
+                    <td><input type="text" id="etternavn">
+                        <span id="feilEtternavn"></span></td>
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group">
+                    <td><label for="telefonnr">Telefonnr</label></td>
+                    <td><input type="text" id="telefonnr">
+                        <span id="feilTelefonnr"></span></td>
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group">
+                    <td><label for="epost">Epost</label></td>
+                    <td><input type="text" id="epost">
+                        <span id="feilEpost"></span></td>
+                </div>
+            </tr>
+        </table>
+    </form>
+
+    <button class="btn btn-primary" onclick="endreBilletten()">Endre billett</button>
+
+
+</div>
+
+
+
+
+</body>
+</html>
