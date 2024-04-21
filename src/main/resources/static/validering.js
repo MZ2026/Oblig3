@@ -27,3 +27,11 @@ function validerEtternavn(etternavn){
     }
 
 }
+
+function validerAlleFelter(){
+    const okFornavn=validerFornavn($("#fornavn").val());
+    const okEtternavn=validerEtternavn($("#etternavn").val());
+    if(okFornavn && okEtternavn){
+        kjopBillett();
+    }
+}

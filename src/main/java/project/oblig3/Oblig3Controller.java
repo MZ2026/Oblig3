@@ -1,5 +1,6 @@
 package project.oblig3;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,7 +12,9 @@ import java.util.List;
 public class Oblig3Controller {
 
     @Autowired
-    Oblig3Repository rep;
+    private Oblig3Repository rep;
+
+
 
     @PostMapping("/lagreBillet")
     public void lagreBillet(KinoBillet billet){

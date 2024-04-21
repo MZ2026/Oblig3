@@ -12,7 +12,8 @@ import java.util.List;
 public class Oblig3Repository {
 
     @Autowired
-    public JdbcTemplate db;
+    private JdbcTemplate db;
+
 
     public void lagreBillet(KinoBillet billet){
         String sql="INSERT INTO KinoBillet(film, antall,fornavn,etternavn,telefonnr,epost) VALUES(?,?,?,?,?,?)";
