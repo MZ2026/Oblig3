@@ -15,7 +15,7 @@
 
         <div class="form-group" >
             <label for="film">Velg film</label>
-            <select id="film" onchange="validerFilm(this.value)">
+            <select id="film" onchange="validerFilm()">
                 <option value="" disabled selected>Velg film her</option>
                 <option>The Beekeeper</option>
                 <option>Killers of the Flower Moon</option>
@@ -28,7 +28,7 @@
 
         <div class="form-group">
             <label for="antall">Antall</label>
-            <input type="number" id="antall"  min="1" max="99">
+            <input type="number" id="antall" onchange="validerAntall(this.value)"  min="1" max="99">
             <span id="feilAntall"></span>
         </div>
 
