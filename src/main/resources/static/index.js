@@ -1,8 +1,8 @@
 $(function(){
-    hentAlleBilletter();
+    hentAlleBilletter();                //a  function to load all tickets
 });
 
-function kjopBillett(){
+function kjopBillett(){                 //take info from input fields
     const billett={
         film:$("#film").val(),
         antall:$("#antall").val(),
@@ -12,11 +12,11 @@ function kjopBillett(){
         epost:$("#epost").val()
     };
 
-    $.post("/lagreBillet",billett,function(){
+    $.post("/lagreBillet",billett,function(){   // used post to save data about tickets
         hentAlleBilletter();
     });
 
-    $("#film").val("");
+    $("#film").val("");      //to clear input fields after buying
     $("#antall").val("");
     $("#fornavn").val("");
     $("#etternavn").val("");
@@ -25,13 +25,13 @@ function kjopBillett(){
 
 }
 
-function hentAlleBilletter(){
+function hentAlleBilletter(){   // to call tickets from the server
     $.get("/hentBilletter",function(data){
         formaterData(data);
     });
 }
 
-function formaterData(billetter){
+function formaterData(billetter){                     // display all information about tickets to the page
     let ut="<table class='table table-striped table-bordered'><tr>" +
         "<th>Film</th>" +
         "<th>Antall</th>" +
@@ -51,17 +51,17 @@ function formaterData(billetter){
     $("#billettene").html(ut);
 }
 
-function endreBilletten(id){
+function endreBilletten(id){            // a function to take the user to a page to edit the ticket
     window.location.href="/endre.html?"+id;
 }
 
-function slettEnBillett(id){
+function slettEnBillett(id){             // a function to delete only one ticket not all
     $.get("/slettEnBillett?id="+id,function(){
         window.location.href='index.html';
     })
 }
 
-function slettBilletter(){
+function slettBilletter(){                // delete all tickets
     $.get("/slettAlleBilletter",function(){
         hentAlleBilletter();
     })
