@@ -1,5 +1,21 @@
+
+function validerFilm(valgtFilm){
+    if(!valgtFilm){
+        $("#feilFilm").html("Velg en film".fontcolor("red"));
+        return false;
+    }
+    else{
+        $("#feilFilm").html("");
+        return true;
+    }
+}
+
+function validerAntall()
+
+
+
 function validerFornavn(fornavn){
-    const regexp=/^[a-zæøåA-ZÆØÅ. \-]{2,20}$/;
+    const regexp=/^[a-zæøåA-ZÆØÅ. \-]{1,50}$/;
     const ok=regexp.test(fornavn);
 
     if(!ok){
@@ -14,7 +30,7 @@ function validerFornavn(fornavn){
 }
 
 function validerEtternavn(etternavn){
-    const regexp=/^[a-zæøåA-ZÆØÅ. \-]{2,20}$/;
+    const regexp=/^[a-zæøåA-ZÆØÅ. \-]{1,50}$/;
     const ok=regexp.test(etternavn);
 
     if(!ok){
@@ -59,11 +75,12 @@ function validerEpost(epost){
 }
 
 function validerAlleFelter(){
+    const okFilm=validerFilm($("#film").val());
     const okFornavn=validerFornavn($("#fornavn").val());
     const okEtternavn=validerEtternavn($("#etternavn").val());
     const okTelefonnr=validerTelefonnr($("#telefonnr").val());
     const okEpost=validerEpost($("#epost").val());
-    if(okFornavn && okEtternavn && okTelefonnr && okEpost){
+    if(okFilm && okFornavn && okEtternavn && okTelefonnr && okEpost){
         kjopBillett();
     }
 }

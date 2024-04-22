@@ -15,14 +15,15 @@
 
         <div class="form-group" >
             <label for="film">Velg film</label>
-            <select id="film">
+            <select id="film" onchange="validerFilm(this.value)">
                 <option value="" disabled selected>Velg film her</option>
                 <option>The Beekeeper</option>
                 <option>Killers of the Flower Moon</option>
                 <option>Sound of Freedom</option>
                 <option>Radical</option>
+                <option>Civil War</option>
             </select>
-            <span id="feilFilm"></span>
+            <span id="feilFilm" ></span>
         </div>
 
         <div class="form-group">
@@ -56,7 +57,7 @@
             <tr>
                 <div class="form-group">
                     <td><label for="epost">Epost</label></td>
-                    <td><input type="text" id="epost" placeholder="eksampel@eksampel.com" onchange="validerEpost(this.value)">
+                    <td><input type="text" id="epost" placeholder="example@example.com" onchange="validerEpost(this.value)">
                         <span id="feilEpost" style="color:red"></span></td>
                 </div>
             </tr>
