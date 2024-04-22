@@ -44,7 +44,7 @@ function validerFilm(){
 }
 
 function validerAntall(antall){
-    const regexp=/^[1-9]{1,99}$/;
+    const regexp=/^[0-9]{1,99}$/;
     const ok=regexp.test(antall);
     if(!ok){
         $("#feilAntall").html("Velg antall billetter.".fontcolor("red"));
