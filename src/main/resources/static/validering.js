@@ -24,8 +24,6 @@ function validerAntall(antall){
     }
 }
 
-
-
 function validerFornavn(fornavn){
     const regexp=/^[a-zæøåA-ZÆØÅ. \-]{1,50}$/;
     const ok=regexp.test(fornavn);
