@@ -49,15 +49,15 @@
             <tr>
                 <div class="form-group">
                     <td><label for="telefonnr">Telefonnr</label></td>
-                    <td><input type="text" id="telefonnr">
-                        <span id="feilTelefonnr"></span></td>
+                    <td><input type="text" id="telefonnr" placeholder="12345678" onchange="validerTelefonnr(this.value)">
+                        <span id="feilTelefonnr" style="color:red"></span></td>
                 </div>
             </tr>
             <tr>
                 <div class="form-group">
                     <td><label for="epost">Epost</label></td>
-                    <td><input type="text" id="epost">
-                        <span id="feilEpost"></span></td>
+                    <td><input type="text" id="epost" placeholder="eksampel@eksampel.com" onchange="validerEpost(this.value)">
+                        <span id="feilEpost" style="color:red"></span></td>
                 </div>
             </tr>
         </table>
