@@ -10,28 +10,26 @@
 <body>
 <div class="container">
     <h1>Bestilling av kinobiletter</h1>
-    <form class="form">
-        <input type="hidden" id="id">
-
-
-        <div class="form-group" >
-            <label for="film">Velg film</label>
-            <select id="film" onchange="validerFilm()">
-                <option value="" disabled selected>Velg film her</option>
-                <option>The Beekeeper</option>
-                <option>Killers of the Flower Moon</option>
-                <option>Sound of Freedom</option>
-                <option>Radical</option>
-                <option>Civil War</option>
-            </select>
+        <form class="form">
+          <input type="hidden" id="id">
+            <div class="form-group" >
+              <label for="film">Velg film</label>
+                <select id="film" onchange="validerFilm()">
+                    <option value="" disabled selected>Velg film her</option>
+                    <option>The Beekeeper</option>
+                    <option>Killers of the Flower Moon</option>
+                    <option>Sound of Freedom</option>
+                    <option>Radical</option>
+                    <option>Civil War</option>
+                </select>
             <span id="feilFilm" ></span>
         </div>
 
-        <div class="form-group">
-            <label for="antall">Antall</label>
-            <input type="number" id="antall" onchange="validerAntall(this.value)"  min="1" max="99">
-            <span id="feilAntall"></span>
-        </div>
+          <div class="form-group">
+                <label for="antall">Antall</label>
+                <input type="number" id="antall" onchange="validerAntall(this.value)"  min="1" max="99">
+                   <span id="feilAntall"></span>
+          </div>
 
         <table>
             <tr>

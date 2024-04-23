@@ -1,5 +1,7 @@
 package project.oblig3;
 
+// en klasse med alle attributer, konstruktører og setter og getter fro KinoBillet
+
 public class KinoBillet {
     private int id;
     private String film;

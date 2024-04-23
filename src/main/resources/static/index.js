@@ -1,8 +1,8 @@
 $(function(){
-    hentAlleBilletter();                //a  function to load all tickets
+    hentAlleBilletter();                // en funksjon for å laste alle billetter
 });
 
-function kjopBillett(){                 //take info from input fields
+function kjopBillett(){                 //tar info fra input
     const billett={
         film:$("#film").val(),
         antall:$("#antall").val(),
@@ -12,11 +12,11 @@ function kjopBillett(){                 //take info from input fields
         epost:$("#epost").val()
     };
 
-    $.post("/lagreBillet",billett,function(){   // used post to save data about tickets
+    $.post("/lagreBillet",billett,function(){
         hentAlleBilletter();
     });
 
-    $("#film").val("");      //to clear input fields after buying
+    $("#film").val("");      // tommer input felter
     $("#antall").val("");
     $("#fornavn").val("");
     $("#etternavn").val("");
@@ -25,13 +25,13 @@ function kjopBillett(){                 //take info from input fields
 
 }
 
-function hentAlleBilletter(){   // to call tickets from the server
+function hentAlleBilletter(){   // kaller billetter fra serveren
     $.get("/hentBilletter",function(data){
         formaterData(data);
     });
 }
 
-function formaterData(billetter){                     // display all information about tickets to the page
+function formaterData(billetter){                     // viser billetter med info på skjermen
     let ut="<table class='table table-striped table-bordered'><tr>" +
         "<th>Film</th>" +
         "<th>Antall</th>" +
@@ -51,17 +51,17 @@ function formaterData(billetter){                     // display all information
     $("#billettene").html(ut);
 }
 
-function endreBilletten(id){            // a function to take the user to a page to edit the ticket
+function endreBilletten(id){            // en funksjon for å endre en billet
     window.location.href="/endre.html?"+id;
 }
 
-function slettEnBillett(id){             // a function to delete only one ticket not all
+function slettEnBillett(id){             // en funksjon for å slette en billett
     $.get("/slettEnBillett?id="+id,function(){
         window.location.href='index.html';
     })
 }
 
-function slettBilletter(){                // delete all tickets
+function slettBilletter(){                // slette alle billetter
     $.get("/slettAlleBilletter",function(){
         hentAlleBilletter();
     })
