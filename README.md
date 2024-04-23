@@ -6,6 +6,8 @@ GitHub brukernavn: MZ2026
 
 GitHub URL: https://github.com/MZ2026/Oblig3
 
+youtube link: https://youtu.be/5uS9mtqRseI
+
 Fult navn: Muzaffar Yousef
 
 kort beskrivelse av applikasjon:
